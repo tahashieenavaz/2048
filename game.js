@@ -154,10 +154,8 @@ app.component('board', {
         }
     },
     mounted() {
-
         this.firstRandomTile()
         this.randomTile()
-
         addEventListener('keydown', e => {
             let tempBoard = null
             let firstBoard = JSON.stringify(this.boardData)
@@ -209,5 +207,4 @@ app.component('board', {
         })
     }
 })
-
 app.mount("#app")
