@@ -19,7 +19,7 @@ const app = Vue.createApp({
 });
 app.component("tile", {
   props: {
-    tile: String,
+    tile: Number,
     i: Number,
     j: Number,
   },
@@ -85,6 +85,24 @@ app.component("board", {
 
       this.boardData[i][j] = 2;
     },
+    flyingScore(value) {
+      const fly = document.createElement("div");
+      const target = document.querySelector(".score");
+      fly.innerText = `+${value}`;
+      fly.style.cssText = `
+        position: absolute;
+        font-size: 1.5rem;
+        left: ${target.offsetLeft + target.offsetWidth / 2}px;
+        top: ${target.offsetTop + target.offsetHeight / 2}px;
+      `;
+      setTimeout(() => {
+        fly.animate([{ opacity: 0, transform: "translateY(-100px)" }], {
+          duration: 200,
+          fill: "forwards",
+        });
+      }, 100);
+      document.body.appendChild(fly);
+    },
     randomTile() {
       if (this.isFullyFilled) return false;
 
@@ -109,6 +127,7 @@ app.component("board", {
             if (previous == column[i]) {
               newColumn[j] = 2 * column[i];
               this.score += 2 * column[i];
+              this.flyingScore(2 * column[i]);
               j++;
               previous = null;
             } else {
