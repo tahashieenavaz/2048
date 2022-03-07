@@ -12,7 +12,8 @@ body {
 [v-cloak] {
   display: none;
 }
-button {
+button,
+.score {
   all: unset;
   background: #8f7a66;
   padding: 15px 20px;
@@ -20,6 +21,11 @@ button {
   border-radius: 0.75rem;
   color: #f9f6f2;
   cursor: pointer;
+}
+.score {
+  background: rgb(187, 173, 160);
+  color: #fafafa;
+  text-align: center;
 }
 header {
   display: flex;

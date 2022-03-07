@@ -49,7 +49,10 @@ app.component("tile", {
 app.component("board", {
   template: `
         <header>
-            <p>Donate!</p>
+            <p class="score">
+              <div style="margin-bottom: .5rem; font-size: .75rem">SCORE</div>
+              <span style="font-size: 1.5rem">{{score}}</span>
+            </p>
             <button @click="newGame">New Game</button>
         </header>
         
@@ -65,6 +68,7 @@ app.component("board", {
     `,
   methods: {
     newGame() {
+      this.score = 0;
       this.boardData = Array(4)
         .fill()
         .map(() => Array(4).fill(0));
