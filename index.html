@@ -1,81 +1,14 @@
 <html>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
-        body {
-            background: #faf8ef;
-            padding: 5rem 0;
-            overflow-x: hidden;
-        }
-        [v-cloak] {
-            display: none;
-        }
-        button {
-            all: unset;
-            background: #8f7a66;
-            padding: 15px 20px;
-            font-weight: bold;
-            border-radius: .75rem;
-            color: #f9f6f2;
-            cursor: pointer;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-block-end: 1rem;
-            font-weight: bold;
-        }
-        .board {
-            background: #bbada0;
-            gap: 1rem;
-            position: relative;
-            border-radius: 1rem;
-            padding: 1rem;
-            width: calc(400px + 5 * 1rem);
-            aspect-ratio: 1;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-        }
+  <link rel="stylesheet" href="styles.css" />
+  <div id="app">
+    <h1 v-cloak style="font-size: 4rem; margin-bottom: 1rem">
+      {{ nextTarget }}
+    </h1>
+    <board></board>
+  </div>
 
-        .tile {
-            font-family: sans-serif;
-            width: 100px;
-            aspect-ratio: 1;
-            background: mediumseagreen;
-            border-radius: .5rem;
-            display: grid;
-            place-content: center;
-            color: #fafafa;
-            font-size: 2.15rem;
-            font-weight: bold;
-            position: absolute;
-            transition: 100ms ease-in-out;
-        }
-        .black {
-            color: rgb(119, 110, 101);
-        }
-        #app {
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            place-content: center;
-        }
-    </style>
-
-    <div id="app" >
-        <h1 v-cloak style="font-size: 4rem; margin-bottom: 1rem">
-            {{ nextTarget }}
-        </h1>
-        <board @changeTarget="(newTarget) => nextTarget = newTarget" />
-    </div>
-
-    <script src="vue.js"></script>
-    <script src="game.js"></script>
-
+  <script src="vue.js"></script>
+  <script src="main.js"></script>
+  <script src="components/tile.js"></script>
+  <script src="components/board.js"></script>
 </html>
