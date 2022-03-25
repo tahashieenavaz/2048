@@ -6,8 +6,7 @@
 }
 body {
   background: #faf8ef;
-  padding: 5rem 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 [v-cloak] {
   display: none;
