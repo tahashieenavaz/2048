@@ -8,9 +8,11 @@ body {
   background: #faf8ef;
   overflow: hidden;
 }
+
 [v-cloak] {
   display: none;
 }
+
 button,
 .score {
   all: unset;
