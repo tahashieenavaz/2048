@@ -1,0 +1,136 @@
+:root {
+  --background: #faf8ef;
+  --board: #bcac9f;
+  --neutral: #ccc1b4;
+  --big-text: #776e65;
+  --button: #8f7a65;
+  --scores: #bcac9f;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+[v-cloak] {
+  display: none;
+}
+body {
+  min-height: 100vh;
+  background: var(--background);
+  font-family: sans-serif;
+  padding-top: 5rem;
+}
+
+#app {
+  margin: 0 auto;
+  width: 500px;
+}
+h1 {
+  color: var(--big-text);
+  font-size: 5rem;
+  font-weight: bold;
+}
+.flex {
+  display: flex;
+}
+.has-rows {
+  flex-direction: column;
+}
+.ic {
+  align-items: center;
+}
+.jc {
+  justify-content: center;
+}
+.sb {
+  justify-content: space-between;
+}
+.gap-1 {
+  gap: calc(1 * 0.25rem);
+}
+.gap-2 {
+  gap: calc(2 * 0.25rem);
+}
+.gap-3 {
+  gap: calc(3 * 0.25rem);
+}
+.gap-4 {
+  gap: calc(4 * 0.25rem);
+}
+.gap-5 {
+  gap: calc(5 * 0.25rem);
+}
+.gap-6 {
+  gap: calc(6 * 0.25rem);
+}
+.gap-7 {
+  gap: calc(7 * 0.25rem);
+}
+.gap-8 {
+  gap: calc(8 * 0.25rem);
+}
+.gap-9 {
+  gap: calc(9 * 0.25rem);
+}
+
+.score {
+  background: var(--scores);
+  padding: 0.5rem;
+  width: 70px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  color: #fafafa;
+  background-color: var(--button);
+  height: 40px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.score p:first-child {
+  color: #eee4da;
+  text-transform: uppercase;
+}
+.score p:nth-child(2) {
+  color: #fafafa;
+}
+#board {
+  display: grid;
+  margin-top: 5rem;
+  grid-template-rows: repeat(4, 1fr);
+  background-color: var(--board);
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+#board > .row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  height: 105px;
+}
+.cell {
+  background: var(--neutral);
+  display: grid;
+  place-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fafafa;
+}
+
+.cell-2,
+.cell-4 {
+  color: #776e65;
+}
