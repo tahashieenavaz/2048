@@ -1,5 +1,5 @@
-import { rand, deepClone, isArrowKey } from "../js/functions.js"
-import { colors } from "../js/data.js"
+import { rand, deepClone, isArrowKey } from "./functions.js"
+import { colors } from "./data.js"
 
 const { createApp, reactive, ref, computed, onMounted } = Vue
 
