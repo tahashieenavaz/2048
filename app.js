@@ -25,6 +25,8 @@ const app = createApp({
 
     const getColor = (cell) => colors[cell]
     const randomCell = (first = false) => {
+      if (board.flat().every((i) => i != 0)) return false
+
       let i = rand(0, 4)
       let p = rand(0, 4)
 
@@ -43,6 +45,8 @@ const app = createApp({
       for (let i = 0; i < 4; i++) for (let p = 0; p < 4; p++) board[i][p] = 0
       randomCell(true)
       randomCell(false)
+      document.querySelector(".finished").classList?.add("hide")
+      score.value = 0
     }
 
     const moveRight = (board) => {
@@ -97,7 +101,7 @@ const app = createApp({
         )
       }
     }
-    const isFinished = computed(() => {
+    const calculateIsFinished = () => {
       const boardSnapshot = deepClone(board)
       const resultsSet = new Set([boardSnapshot])
 
@@ -107,7 +111,7 @@ const app = createApp({
       resultsSet.add(JSON.stringify(moveUp(boardSnapshot)))
 
       return resultsSet.size === 2
-    })
+    }
 
     onMounted(() => {
       randomCell(true)
@@ -121,7 +125,8 @@ const app = createApp({
         if (e.code === "ArrowLeft") moveLeft(board)
         if (e.code === "ArrowDown") moveDown(board)
 
-        if (isFinished) {
+        if (calculateIsFinished()) {
+          document.querySelector(".finished").classList?.remove("hide")
           return console.log("finish")
         }
 

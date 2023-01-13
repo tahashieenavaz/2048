@@ -32,6 +32,7 @@
       </header>
 
       <main id="board" class="rounded" v-cloak>
+        <div class="finished hide">Finished</div>
         <div v-for="row in board" class="row">
           <div
             v-for="cell in row"
