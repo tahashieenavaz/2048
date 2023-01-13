@@ -5,8 +5,6 @@ const { createApp, reactive, ref, computed, onMounted } = Vue
 
 const app = createApp({
   setup() {
-    // Variables
-
     const score = ref(0)
     const best = computed(() => {
       const storedBestScore = Number(localStorage.getItem("score")) || 0
@@ -24,8 +22,6 @@ const app = createApp({
       [0, 0, 0, 0],
       [0, 0, 0, 0],
     ])
-
-    // Functions
 
     const getColor = (cell) => colors[cell]
     const randomCell = (first = false) => {
@@ -88,9 +84,9 @@ const app = createApp({
 
       return board
     }
-    const calculateRotatedBoard = (inputBoard) => {
-      return inputBoard[0].map((val, index) =>
-        inputBoard.map((row) => row[index]).reverse()
+    const calculateRotatedBoard = (board) => {
+      return board[0].map((val, index) =>
+        board.map((row) => row[index]).reverse()
       )
     }
     const rotateBoard = (board, count = 1) => {
@@ -101,7 +97,7 @@ const app = createApp({
         )
       }
     }
-    const isFinished = () => {
+    const isFinished = computed(() => {
       const boardSnapshot = deepClone(board)
       const resultsSet = new Set([boardSnapshot])
 
@@ -111,9 +107,7 @@ const app = createApp({
       resultsSet.add(JSON.stringify(moveUp(boardSnapshot)))
 
       return resultsSet.size === 2
-    }
-
-    // Life cycle hooks
+    })
 
     onMounted(() => {
       randomCell(true)
@@ -127,7 +121,7 @@ const app = createApp({
         if (e.code === "ArrowLeft") moveLeft(board)
         if (e.code === "ArrowDown") moveDown(board)
 
-        if (isFinished()) {
+        if (isFinished) {
           return console.log("finish")
         }
 
