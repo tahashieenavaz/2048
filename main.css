@@ -75,10 +75,13 @@ h1 {
 
 .score {
   background: var(--scores);
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   width: 70px;
+  aspect-ratio: 1;
   text-align: center;
   font-weight: bold;
+  display: grid;
+  place-content: center;
 }
 
 .rounded {
@@ -97,6 +100,10 @@ button {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
+  transition: 200ms;
+}
+button:hover {
+  background-color: #746250;
 }
 
 .score p:first-child {
@@ -128,6 +135,7 @@ button {
   font-size: 3rem;
   font-weight: bold;
   color: #fafafa;
+  transition: 100ms;
 }
 
 .cell-2,
