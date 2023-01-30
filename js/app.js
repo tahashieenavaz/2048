@@ -120,6 +120,9 @@ const app = createApp({
       addEventListener("keydown", (e) => {
         if (!isArrowKey(e)) return false
 
+        // Prevents page scroll when user is playing the game
+        e.preventDefault()
+
         if (e.code === "ArrowRight") moveRight(board)
         if (e.code === "ArrowUp") moveUp(board)
         if (e.code === "ArrowLeft") moveLeft(board)
