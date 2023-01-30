@@ -2,7 +2,7 @@
 
 <p style="text-align:center">
 
-<img src="https://raw.githubusercontent.com/tahashieenavaz/2048/main/graphics/sticker.webp" alt="Jumping Sticker" width="300" />
+<img src="https://raw.githubusercontent.com/tahashieenavaz/2048/main/arts/header.svg" alt="2048 By Underdash" />
 
 </p>
 
