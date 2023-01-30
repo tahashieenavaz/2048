@@ -1,0 +1,26 @@
+{
+  "name": "2048",
+  "version": "1.0.0",
+  "description": "2048 game recreated using Vue.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahashieenavaz/2048.git"
+  },
+  "keywords": [
+    "2048",
+    "game",
+    "vue"
+  ],
+  "author": "Taha Shieenavaz <tahashieenavaz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tahashieenavaz/2048/issues"
+  },
+  "homepage": "https://github.com/tahashieenavaz/2048#readme",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
