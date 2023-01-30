@@ -1,4 +1,4 @@
-import { rand, deepClone, isArrowKey } from "./functions.js"
+import { rand, isArrowKey, deepClone } from "./functions.js"
 import { colors } from "./data.js"
 
 const { createApp, reactive, ref, computed, onMounted } = Vue
@@ -89,7 +89,7 @@ const app = createApp({
       return board
     }
     const calculateRotatedBoard = (board) => {
-      return board[0].map((val, index) =>
+      return board[0].map((_, index) =>
         board.map((row) => row[index]).reverse()
       )
     }
@@ -119,6 +119,9 @@ const app = createApp({
 
       addEventListener("keydown", (e) => {
         if (!isArrowKey(e)) return false
+
+        // Prevents page scroll when user is playing the game
+        e.preventDefault()
 
         if (e.code === "ArrowRight") moveRight(board)
         if (e.code === "ArrowUp") moveUp(board)
