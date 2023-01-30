@@ -89,7 +89,7 @@ const app = createApp({
       return board
     }
     const calculateRotatedBoard = (board) => {
-      return board[0].map((val, index) =>
+      return board[0].map((_, index) =>
         board.map((row) => row[index]).reverse()
       )
     }
