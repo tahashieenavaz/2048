@@ -2,7 +2,7 @@
 
 <p style="text-align:center">
 
-<img src="https://raw.githubusercontent.com/tahashieenavaz/2048/main/arts/header.svg" alt="2048 By Underdash" />
+<img src="https://raw.githubusercontent.com/tahashieenavaz/2048/main/art/header.svg" alt="2048 By Underdash" />
 
 </p>
 
