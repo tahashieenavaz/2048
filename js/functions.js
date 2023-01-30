@@ -7,3 +7,8 @@ export const isArrowKey = (event) => {
     event.code
   )
 }
+
+export const deepClone = (array) => {
+  const { stringify, parse } = JSON
+  return parse(stringify(array))
+}

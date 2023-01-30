@@ -1,4 +1,4 @@
-import { rand, isArrowKey } from "./functions.js"
+import { rand, isArrowKey, deepClone } from "./functions.js"
 import { colors } from "./data.js"
 
 const { createApp, reactive, ref, computed, onMounted } = Vue
@@ -102,7 +102,7 @@ const app = createApp({
       }
     }
     const calculateIsFinished = () => {
-      const boardSnapshot = structuredClone(board)
+      const boardSnapshot = deepClone(board)
       const resultsSet = new Set([boardSnapshot])
 
       resultsSet.add(JSON.stringify(moveLeft(boardSnapshot)))
